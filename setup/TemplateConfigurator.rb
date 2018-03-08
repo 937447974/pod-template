@@ -70,7 +70,7 @@ module Pod
     def run
       @message_bank.welcome_message
 
-      framework = self.ask_with_answers("What language do you want to use?", ["Swift", "ObjC"]).to_sym
+      framework = self.ask_with_answers("What language do you want to use", ["Swift", "ObjC"]).to_sym
       case framework
         when :swift
           ConfigureSwift.perform(configurator: self)
@@ -106,8 +106,9 @@ module Pod
         system "pod install"
       end
 
-      `git add Example/#{pod_name}.xcodeproj/project.pbxproj`
+      `git add Example/#{pod_name}.*`
       `git commit -m "Initial commit"`
+      `git push --set-upstream origin master`
     end
 
     def clean_template_files
@@ -176,9 +177,17 @@ module Pod
     end
 
     def reinitialize_git_repo
-      `rm -rf .git`
-      `git init`
-      `git add -A`
+        `rm -rf .git`
+        `git init`
+        File.open(".gitignore", "a") do |file|
+            file.puts ""
+            file.puts "# pod-template"
+            file.puts "Example/Podfile.lock"
+            file.puts "Example/Pods/"
+        end
+        git_url = self.ask("What is your git url (example : git@git.xiaojukeji.com:yangjunyang/pod-template.git)")
+        `git remote add origin #{git_url}`
+        `git add -A`
     end
 
     def validate_user_details
