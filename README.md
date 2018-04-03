@@ -1,5 +1,4 @@
-pod-template
-============
+# pod-template
 
 An opinionated template for creating a Pod with the following features:
 
@@ -19,8 +18,22 @@ There are two reasons for wanting to work on this template, making your own or i
 
 The command `pod lib create` aims to be ran along with this guide: http://guides.cocoapods.org/making/using-pod-lib-create.html so any changes of flow should be updated there also.
 
+```
+pod lib create --template-url=git@github.com:937447974/pod-template.git MyLibrary 
+```
+
 It is open to communal input, but adding new features, or new ideas are probably better off being discussed in an issue first. In general we try to think if an average Xcode user is going to use this feature or not, if it's unlikely is it a _very strongly_ encouraged best practice ( ala testing / CI. ) If it's something useful for saving a few minutes every deploy, or isn't easily documented in the guide it is likely to be denied in order to keep this project as simple as possible.
 
 ## Requirements:
 
 - CocoaPods 1.0.0+
+
+----------
+
+# Appendix
+
+## Copyright
+
+CSDN：[http://blog.csdn.net/y550918116j](http://blog.csdn.net/y550918116j)
+
+GitHub：[https://github.com/937447974](https://github.com/937447974)
