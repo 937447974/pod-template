@@ -20,12 +20,14 @@ Pod::Spec.new do |s|
     s.requires_arc = true
 
     # --- Subspecs
-    s.subspec 'Develop' do |develop| # 开发过程中只需导入此 subspec
-        develop.source_files = 'README.md','${POD_NAME}.podspec','${POD_NAME}/Classes/**/*'
-    end
+    s.default_subspec = 'Develop'
 
     # s.resource_bundles = {
     #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
     # }
+
+    s.subspec 'Develop' do |develop| # 开发过程中只需导入此 subspec
+        develop.source_files = 'README.md','${POD_NAME}.podspec','${POD_NAME}/Classes/**/*'
+    end
 
 end
