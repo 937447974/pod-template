@@ -22,12 +22,12 @@ Pod::Spec.new do |s|
     # --- Subspecs
     s.default_subspec = 'Develop'
 
+    s.subspec 'Develop' do |develop|
+        develop.source_files = '${POD_NAME}/Classes/**/*'
+    end
+
     # s.resource_bundles = {
     #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
     # }
-
-    s.subspec 'Develop' do |develop| # 开发过程中只需导入此 subspec
-        develop.source_files = 'README.md','${POD_NAME}.podspec','${POD_NAME}/Classes/**/*'
-    end
 
 end
