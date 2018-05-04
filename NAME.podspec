@@ -19,15 +19,19 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '8.0'
     s.requires_arc = true
 
-    # --- Subspecs
-    s.default_subspec = 'Develop'
+    # ——— File patterns
+    s.source_files = '${POD_NAME}/Classes/**/*'
 
-    s.subspec 'Develop' do |develop|
-        develop.source_files = '${POD_NAME}/Classes/**/*'
-    end
+    # --- Subspecs
+    # s.default_subspec = 'Develop'
+    # s.subspec 'Develop' do |develop|
+    #      develop.source_files = '${POD_NAME}/Classes/**/*'
+    #  end
 
     # s.resource_bundles = {
     #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
     # }
+
+    # s.dependency 'YJCocoa', '~> 8.0.2'
 
 end
