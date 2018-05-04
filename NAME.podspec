@@ -19,6 +19,9 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '8.0'
     s.requires_arc = true
 
+    # ——— Dependency
+    # s.dependency 'YJCocoa', '~> 8.0.2'
+
     # ——— File patterns
     s.source_files = '${POD_NAME}/Classes/**/*'
 
@@ -31,7 +34,5 @@ Pod::Spec.new do |s|
     # s.resource_bundles = {
     #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
     # }
-
-    # s.dependency 'YJCocoa', '~> 8.0.2'
 
 end
