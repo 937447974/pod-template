@@ -4,16 +4,12 @@ platform :ios, ‘8.0’
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-def develop_pods
-    pod '${POD_NAME}’, :path => '../'
-end
-
-
 target '${POD_NAME}_Example' do
-
-  develop_pods
+  pod '${POD_NAME}', :path => '../'
 
   target '${POD_NAME}_Tests' do
     inherit! :search_paths
+
+    ${INCLUDED_PODS}
   end
 end
