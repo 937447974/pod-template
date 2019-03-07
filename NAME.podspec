@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
 
     # ——— File patterns
     s.source_files = '${POD_NAME}/Classes/**/*'
+    # s.ios.vendored_frameworks = '${POD_NAME}/Frameworks/*.framework'
 
     # --- Subspecs
     # s.default_subspec = 'Develop'
