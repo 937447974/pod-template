@@ -16,8 +16,7 @@ Pod::Spec.new do |s|
     s.source   = { :git => 'https://github.com/${USER_NAME}/${POD_NAME}.git', :tag => s.version.to_s }
 
     # ――― Platform
-    s.platform     = :ios, '8.0'
-    s.requires_arc = true
+    s.ios.deployment_target = '9.0'
 
     # ——— Dependency
     # s.dependency 'YJCocoa', '~> 8.0.2'
@@ -26,14 +25,14 @@ Pod::Spec.new do |s|
     s.source_files = '${POD_NAME}/Classes/**/*'
     # s.ios.vendored_frameworks = '${POD_NAME}/Frameworks/*.framework'
 
+    # s.resource_bundles = {
+    #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
+    # }
+
     # --- Subspecs
     # s.default_subspec = 'Develop'
     # s.subspec 'Develop' do |develop|
     #      develop.source_files = '${POD_NAME}/Classes/**/*'
     #  end
-
-    # s.resource_bundles = {
-    #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
-    # }
 
 end
