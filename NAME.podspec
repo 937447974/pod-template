@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
     # ――― Platform
     s.ios.deployment_target = '9.0'
+    s.swift_version = '5.0'
 
     # ——— Dependency
     # s.dependency 'YJCocoa', '~> 8.0.2'
